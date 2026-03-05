@@ -1,0 +1,130 @@
+/* ── ADD NOTE MODAL ── */
+#addNoteModal .modal-content {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 0;
+  border-top: 2px solid #8B0000;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+
+#addNoteModal .modal-header {
+  background: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 1rem 1.5rem;
+}
+
+#addNoteModal .modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.1em;
+  color: #e8e4e0;
+}
+
+#addNoteModal .modal-title .bi {
+  color: #8B0000;
+}
+
+#addNoteModal .btn-close {
+  filter: invert(0.6);
+}
+
+#addNoteModal .modal-body {
+  background: #111;
+  padding: 1.5rem;
+}
+
+#addNoteModal .modal-footer {
+  background: #1a1a1a;
+  border-top: 1px solid #2a2a2a;
+  padding: 0.85rem 1.5rem;
+}
+
+/* Error alert */
+#addNoteModal .alert-danger {
+  background: rgba(139,0,0,0.12);
+  border: 1px solid #5a0000;
+  border-left: 3px solid #b30000;
+  border-radius: 0;
+  color: #e8b4b4;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  padding: 0.55rem 0.85rem;
+}
+
+/* Form labels */
+#addNoteModal .form-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+/* Inputs */
+#addNoteModal .form-control {
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-radius: 0;
+  color: #e8e4e0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+#addNoteModal .form-control::placeholder {
+  color: #333;
+}
+
+#addNoteModal .form-control:focus {
+  background: #0a0a0a;
+  color: #e8e4e0;
+  border-color: #8B0000;
+  box-shadow: 0 0 0 2px rgba(139,0,0,0.2);
+  outline: none;
+}
+
+textarea#addNoteModal .form-control {
+  resize: vertical;
+}
+
+/* Cancel button */
+.btn-add-cancel {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 0;
+  color: #666;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-add-cancel:hover {
+  border-color: #666;
+  color: #e8e4e0;
+}
+
+/* Save button */
+.btn-add-save {
+  background: #8B0000;
+  border: 1px solid #8B0000;
+  border-radius: 0;
+  color: #fff;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.btn-add-save:hover {
+  background: #b30000;
+  border-color: #b30000;
+  box-shadow: 0 0 12px rgba(139,0,0,0.4);
+}

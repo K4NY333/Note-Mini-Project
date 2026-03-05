@@ -1,0 +1,93 @@
+/* ── EDIT CARD ── */
+.edit-card-header {
+  background: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+  border-left: 2px solid #8B0000;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #b30000;
+  padding: 0.65rem 1rem;
+}
+
+.edit-card-body {
+  background: #111;
+  padding: 1rem;
+}
+
+.edit-form-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.edit-form-control {
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-radius: 0;
+  color: #e8e4e0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.75rem;
+  width: 100%;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.edit-form-control:focus {
+  border-color: #8B0000;
+  box-shadow: 0 0 0 2px rgba(139,0,0,0.2);
+  outline: none;
+  background: #0a0a0a;
+  color: #e8e4e0;
+}
+
+textarea.edit-form-control {
+  resize: vertical;
+}
+
+.edit-card-footer {
+  background: #1a1a1a;
+  border-top: 1px solid #2a2a2a;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-edit-cancel {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 0;
+  color: #666;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-edit-cancel:hover {
+  border-color: #666;
+  color: #e8e4e0;
+}
+
+.btn-edit-save {
+  background: #8B0000;
+  border: 1px solid #8B0000;
+  border-radius: 0;
+  color: #fff;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.btn-edit-save:hover {
+  background: #b30000;
+  box-shadow: 0 0 10px rgba(139,0,0,0.4);
+}

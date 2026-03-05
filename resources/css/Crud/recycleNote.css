@@ -1,0 +1,137 @@
+/* ── RECYCLE BIN MODAL ── */
+#recycleModal .modal-content {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 0;
+  border-top: 2px solid #8B0000;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+
+#recycleModal .modal-header {
+  background: #1a1a1a !important;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 1rem 1.5rem;
+}
+
+#recycleModal .modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.1em;
+  color: #e8e4e0;
+}
+
+#recycleModal .btn-close {
+  filter: invert(0.6);
+}
+
+#recycleModal .modal-body {
+  background: #111;
+  padding: 1.5rem;
+}
+
+#recycleModal .modal-footer {
+  background: #1a1a1a;
+  border-top: 1px solid #2a2a2a;
+  padding: 0.85rem 1.5rem;
+}
+
+/* Loading state */
+#recycleLoading p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: #666;
+}
+
+.spinner-border.text-danger {
+  color: #8B0000 !important;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-width: 2px;
+}
+
+/* Empty state */
+#recycleEmpty .bi-trash {
+  color: #333 !important;
+}
+
+#recycleEmpty p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: #444;
+}
+
+/* Table */
+#recycleModal .table {
+  border-collapse: collapse;
+  margin-bottom: 0;
+}
+
+#recycleModal .table thead th {
+  background: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+  border-top: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #666;
+  padding: 0.65rem 0.85rem;
+  font-weight: 400;
+}
+
+#recycleModal .table tbody td {
+  background: #111;
+  border-bottom: 1px solid #1e1e1e;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: #999;
+  padding: 0.7rem 0.85rem;
+  vertical-align: middle;
+  transition: background 0.15s, color 0.15s;
+}
+
+#recycleModal .table tbody tr:hover td {
+  background: #1a1a1a;
+  color: #e8e4e0;
+}
+
+/* Restore button */
+.btn-restore {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 0;
+  color: #666;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.btn-restore:hover {
+  background: #8B0000;
+  border-color: #8B0000;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(139,0,0,0.3);
+}
+
+/* Close button */
+.btn-recycle-close {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 0;
+  color: #666;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-recycle-close:hover {
+  border-color: #666;
+  color: #e8e4e0;
+}

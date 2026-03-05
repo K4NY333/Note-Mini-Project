@@ -1,0 +1,95 @@
+/* ── VIEW CARD ── */
+.view-card-header {
+  background: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+  border-left: 2px solid #333;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #555;
+  padding: 0.65rem 1rem;
+  transition: border-left-color 0.2s;
+}
+
+.card:hover .view-card-header {
+  border-left-color: #8B0000;
+  color: #b30000;
+}
+
+.view-card-body {
+  background: #111;
+  padding: 1rem 1.25rem;
+}
+
+.view-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  color: #e8e4e0;
+  margin-bottom: 0.4rem;
+}
+
+.view-card-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.view-card-footer {
+  background: #1a1a1a;
+  border-top: 1px solid #2a2a2a;
+  padding: 0.6rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view-card-timestamp {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: #444;
+}
+
+/* Edit & Delete buttons */
+.btn-card-edit {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 0;
+  color: #666;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.65rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-card-edit:hover {
+  border-color: #8B0000;
+  color: #b30000;
+  background: rgba(139,0,0,0.06);
+}
+
+.btn-card-delete {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 0;
+  border-left: none;
+  color: #666;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.65rem;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.btn-card-delete:hover {
+  background: #8B0000;
+  border-color: #8B0000;
+  color: #fff;
+}
