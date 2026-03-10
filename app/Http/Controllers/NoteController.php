@@ -4,26 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NoteController extends Controller
-{   
+{
 
     public function SearchNote(Request $request)
-{
-    $param = $request->query('param');
+    {
+        $param = $request->query('param');
 
-    $notes = Note::where('user_id', auth()->id())
-        ->where(function($query) use ($param) {
-            $query->where('title', 'like', '%' . $param . '%')
-                  ->orWhere('content', 'like', '%' . $param . '%')
-                  ->orWhere('created_at', 'like', '%' . $param . '%');
-        })
-        ->get();
+        $notes = Note::where('user_id', Auth::id())
+            ->where(function ($query) use ($param) {
+                $query->where('title', 'like', '%' . $param . '%')
+                    ->orWhere('content', 'like', '%' . $param . '%')
+                    ->orWhere('created_at', 'like', '%' . $param . '%');
+            })
+            ->get();
 
-    return view('dashboard', compact('notes'));
-}   
+        return view('dashboard', compact('notes'));
+    }
 
-        public function CreateNote(Request $request)
+    public function CreateNote(Request $request)
     {
         $request->validate([
             'title'   => 'required|string|max:255',
@@ -31,9 +32,9 @@ class NoteController extends Controller
         ]);
 
         $note = Note::create([
-            'user_id' => auth()->id(),
-            'title'   => $request->title,
-            'content' => $request->content,
+            'user_id' => Auth::id(),
+            'title'   => $request->input('title'),
+            'content' => $request->input('content'),
         ]);
 
         return request()->expectsJson()
@@ -42,13 +43,24 @@ class NoteController extends Controller
     }
 
     public function ReadNote()
-{
-    $notes = Note::where('user_id', auth()->id())->get();
+    {
+        $perPage = request()->input('per_page', 9);
 
-    return request()->expectsJson()
-        ? response()->json(['message' => 'Notes retrieved successfully', 'data' => $notes], 200)
-        : view('dashboard', compact('notes'));
-}
+        $notes = Note::with('user')->where('user_id', Auth::id())
+            ->orderBy('created_at', 'desc')
+            ->paginate($perPage);
+
+        return request()->expectsJson()
+            ? response()->json([
+                'message' => 'Notes retrieved successfully',
+                'data' => $notes->items(),
+                'total' => $notes->total(),
+                'current_page' => $notes->currentPage(),
+                'last_page' => $notes->lastPage(),
+                'per_page' => $notes->perPage(),
+            ], 200)
+            : view('dashboard', compact('notes'));
+    }
 
     public function UpdateNote(Request $request, $id)
     {
@@ -57,7 +69,7 @@ class NoteController extends Controller
             'content' => 'required|string',
         ]);
 
-        $note = Note::where('id', $id)->where('user_id', auth()->id())->firstOrFail();
+        $note = Note::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
         $note->update($validated);
 
         return back()->with('success', 'Note updated successfully!');
@@ -88,7 +100,7 @@ class NoteController extends Controller
 
     public function RecycleBin()
     {
-        $deletedNotes = Note::onlyTrashed()->where('user_id', auth()->id())->get();
+        $deletedNotes = Note::onlyTrashed()->where('user_id', Auth::id())->get();
 
         return response()->json([
             'message' => 'All Deleted Notes',
@@ -98,7 +110,7 @@ class NoteController extends Controller
 
     public function RestoreNote($id)
     {
-        $note = Note::onlyTrashed()->where('user_id', auth()->id())->findOrFail($id);
+        $note = Note::onlyTrashed()->where('user_id', Auth::id())->findOrFail($id);
         $note->restore();
 
         return request()->expectsJson()
@@ -108,7 +120,7 @@ class NoteController extends Controller
 
     public function Pagination(Request $request)
     {
-        $notes = Note::where('user_id', auth()->id())->paginate(10);
+        $notes = Note::where('user_id', Auth::id())->paginate(10);
 
         return response()->json([
             'message' => 'Displayed 10 contents per page',

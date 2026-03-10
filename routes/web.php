@@ -5,9 +5,13 @@
     use App\Http\Controllers\UserLoginController;
 
     // If you have a login route without a name, add ->name('login')
-    Route::get('/index', function () {return view('index');})->name('login');
+    Route::get('/', function () {
+        return view('index');
+    })->name('login');
     Route::get('/dashboard', [NoteController::class, 'ReadNote'])->middleware(['web', 'auth'])->name('dashboard');
-    Route::get('/notes', function () {return view('notes');})->name('notes');
+    Route::get('/notes', function () {
+        return view('notes');
+    })->name('notes');
 
 
     //login/signup
@@ -17,12 +21,12 @@
 
     //notes
     Route::middleware(['web', 'auth'])->group(function () {
-    Route::get('/dashboard', [NoteController::class, 'ReadNote'])->name('dashboard');
-    Route::post('/notes/add', [NoteController::class, 'CreateNote'])->name('notes.create');
-    Route::put('/notes/update/{id}', [NoteController::class, 'UpdateNote'])->name('notes.update');
-    Route::delete('/notes/delete/{id}', [NoteController::class, 'DeleteNote'])->name('notes.delete');
-    Route::get('/notes/recycle', [NoteController::class, 'RecycleBin'])->name('notes.trash');
-    Route::patch('/notes/{id}/restore', [NoteController::class, 'RestoreNote'])->name('notes.restore');
-    Route::get('/note/pagination', [NoteController::class, 'Pagination'])->name('notes.pagination');
-    Route::get('/notes/search', [NoteController::class, 'SearchNote'])->name('SearchNote');
-});
+        Route::get('/dashboard', [NoteController::class, 'ReadNote'])->name('dashboard');
+        Route::post('/notes/add', [NoteController::class, 'CreateNote'])->name('notes.create');
+        Route::put('/notes/update/{id}', [NoteController::class, 'UpdateNote'])->name('notes.update');
+        Route::delete('/notes/delete/{id}', [NoteController::class, 'DeleteNote'])->name('notes.delete');
+        Route::get('/notes/recycle', [NoteController::class, 'RecycleBin'])->name('notes.trash');
+        Route::patch('/notes/{id}/restore', [NoteController::class, 'RestoreNote'])->name('notes.restore');
+        Route::get('/note/pagination', [NoteController::class, 'Pagination'])->name('notes.pagination');
+        Route::get('/notes/search', [NoteController::class, 'SearchNote'])->name('SearchNote');
+    });
